@@ -30,7 +30,7 @@ public class WebCopyPasteUI extends UI implements Observer {
     private CopyPasteService service = CopyPasteService.getInstance();
 
     @WebServlet(value = "/*", asyncSupported = true)
-    @VaadinServletConfiguration(productionMode = false, ui = WebCopyPasteUI.class)
+    @VaadinServletConfiguration(productionMode = true, ui = WebCopyPasteUI.class)
     public static class Servlet extends VaadinServlet {
     }
 
