@@ -1,3 +1,7 @@
+/*
+  Trayan Momkov 2018
+ */
+
 package info.trekto.webcopypaste;
 
 public class CopyPasteBean {

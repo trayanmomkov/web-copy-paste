@@ -6,8 +6,9 @@ UI built with Vaadin.
 Usage:
 
     git clone https://github.com/.git
-    cd hello-world
+    cd web-copy-paste/
     mvn jetty:run -Djetty.port=8080
     
     Go to http://localhost:8080/
+    Be sure your port 8080 is not already occupied.
 
