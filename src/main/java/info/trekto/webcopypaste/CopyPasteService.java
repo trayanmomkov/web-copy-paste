@@ -13,17 +13,18 @@ import java.util.Observer;
 
 class CopyPasteService extends Observable {
     private static final CopyPasteService INSTANCE = new CopyPasteService();
-    private static final SimpleDateFormat TIMESTAMP_FORMAT = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-
-    private CopyPasteService() {
-    }
 
     public static CopyPasteService getInstance() {
         return INSTANCE;
     }
 
-    private CopyPasteBean bean = new CopyPasteBean();
-    private Collection<Observer> observers = new ArrayList<>();
+    private CopyPasteBean bean;
+    private Collection<Observer> observers;
+
+    private CopyPasteService() {
+        bean = new CopyPasteBean();
+        observers = new ArrayList<>();
+    }
 
     public void addObserver(Observer observer) {
         observers.add(observer);
@@ -37,7 +38,6 @@ class CopyPasteService extends Observable {
     }
 
     public void clearPushed() {
-        bean.addToHistory("\n================\n" + TIMESTAMP_FORMAT.format(new Date()) + ":\t\t" + bean.getInput());
         bean.setInput("");
         for (Observer observer : observers) {
             observer.update(this, bean);
@@ -46,9 +46,5 @@ class CopyPasteService extends Observable {
 
     public String getInput() {
         return bean.getInput();
-    }
-
-    public String getHistory() {
-        return bean.getHistory();
     }
 }
