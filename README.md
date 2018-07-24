@@ -5,7 +5,7 @@ UI built with Vaadin.
 
 Usage:
 
-    git clone https://github.com/.git
+    git clone https://github.com/trayanmomkov/web-copy-paste.git
     cd web-copy-paste/
     mvn jetty:run -Djetty.port=8080
     
